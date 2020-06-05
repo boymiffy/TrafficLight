@@ -21,7 +21,7 @@ tools:context=".MainActivity">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gl1" />
-
+    <!--綠燈秒數輸入-->
     <EditText
         android:id="@+id/green"
         android:layout_width="0dp"
@@ -32,7 +32,7 @@ tools:context=".MainActivity">
         app:layout_constraintEnd_toStartOf="@+id/yellow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gl1" />
-
+    <!--黃燈秒數輸入-->
     <EditText
         android:id="@+id/yellow"
         android:layout_width="0dp"
@@ -43,7 +43,7 @@ tools:context=".MainActivity">
         app:layout_constraintEnd_toStartOf="@+id/red"
         app:layout_constraintStart_toEndOf="@+id/green"
         app:layout_constraintTop_toTopOf="@+id/gl1" />
-
+    <!--紅燈秒數輸入-->
     <EditText
         android:id="@+id/red"
         android:layout_width="0dp"
