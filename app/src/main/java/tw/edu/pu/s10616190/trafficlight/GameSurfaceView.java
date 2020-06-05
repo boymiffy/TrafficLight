@@ -37,7 +37,7 @@ public class GameSurfaceView extends SurfaceView implements SurfaceHolder.Callba
         paint = new Paint();
     }
 
-    @Override//view處於可見狀態時執行surfaceCreate
+    @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
         Canvas canvas = surfaceHolder.lockCanvas(null);
         drawSomething(canvas);
@@ -49,7 +49,7 @@ public class GameSurfaceView extends SurfaceView implements SurfaceHolder.Callba
 
     }
 
-    @Override//view處於不可見狀態時執行surfaceDestroyed
+    @Override
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
 
     }
@@ -75,11 +75,13 @@ public class GameSurfaceView extends SurfaceView implements SurfaceHolder.Callba
         int BGnewX = (int)w + BGmoveX;
 
         // 如果已捲動整張圖則重新開始，否則用兩張圖拼裝
-        if (BGnewX <= 0) {//處理1張圖
+        if (BGnewX <= 0) {
             BGmoveX = 0;
+            // only need one draw
             DestRect = new Rect(0, 0, (int) w, (int) h);
             canvas.drawBitmap(Road , SrcRect, DestRect, null);
-        } else {//2張圖做拼接
+        } else {
+            // need to draw original and wrap
             DestRect = new Rect(BGmoveX, 0, (int) (w+BGmoveX), (int) h);
             canvas.drawBitmap(Road , SrcRect, DestRect, null);
             DestRect = new Rect(BGnewX, 0, (int) (w+BGnewX), (int) h);

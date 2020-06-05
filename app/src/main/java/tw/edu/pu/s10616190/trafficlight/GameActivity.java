@@ -34,7 +34,7 @@ public class GameActivity extends AppCompatActivity {
 
         GameSV = (GameSurfaceView) findViewById(R.id.GameSV);
         //設定初始測試之燈號秒數
-        GameSV.SetLightSec(6,2,3);
+        GameSV.SetLightSec(0,0,0);
 
         handler= new Handler();
     }
