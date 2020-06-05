@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,8 +34,17 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         GameSV = (GameSurfaceView) findViewById(R.id.GameSV);
+
+        public void SetLightSec(int GreenSec, int YellowSec, int RedSec){
+            GreenLightSec = GreenSec;
+            YellowLightSec = YellowSec;
+            RedLightSec = RedSec;
+        }
         //設定初始測試之燈號秒數
-        GameSV.SetLightSec(0,0,0);
+        EditText G=(EditText) findViewById(R.id.green);
+        EditText Y=(EditText) findViewById(R.id.yellow);
+        EditText R=(EditText) findViewById(R.id.red);
+        GameSV.SetLightSec(G,Y,R);
 
         handler= new Handler();
     }
